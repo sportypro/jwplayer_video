@@ -1,0 +1,20 @@
+<div class="app-video-container relative" [style.height]="maxHeight + 'px'">
+ 
+  <img #imgPoster [src]="_config._poster" style="opacity: 1;">
+
+  <app-jwplayer
+    *ngIf="_config.source"
+    [height]="_config.maxHeight === 0 ? 0 : maxHeight" 
+    [dimens]="dimnes"
+    [source]="{source: _config.source, poster: _config._poster}"
+    [muteMandatory]="_config.muted"
+    (onReady)="handlerOnReady($event)"
+    (onPlay)="handlerOnPlay()"
+    (onPause)="handlerOnPause()"
+    (onError)="handlerOnError($event)"
+    (onErrorPlay)="handlerOnErrorPlay($event)"
+    (onTimeUpdate)="handlerOnTimeUpdate($event)"
+    (onLoadedData)="handlerOnLoadedData()"
+  ></app-jwplayer>
+
+</div>

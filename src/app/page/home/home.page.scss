@@ -1,0 +1,34 @@
+ion-slides {
+    height: -webkit-fill-available;
+    z-index: 2;
+    ion-slide {
+        height: auto;
+        .item-slider-img {
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: auto;
+            }
+        }
+        ion-buttons {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 2;
+            ion-icon {
+                color: white;
+            }
+        }
+    }
+}
+.video-slide-principal {
+    top: 0px;
+    z-index: 1;
+    pointer-events: none;
+    position: absolute;
+}

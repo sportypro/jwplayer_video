@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  cdn: 'https://storage.googleapis.com/challer-multimedia-bucket/'
 };

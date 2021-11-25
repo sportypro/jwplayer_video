@@ -1,0 +1,34 @@
+
+<ion-content>
+  <ion-slides
+    id="slide-principal"
+    pager="true"
+    [options]="slideOptions"
+    (ionSlideDidChange)="ionSlideDidChange($event)"
+    (ionSlideTransitionEnd)="ionSlideTouchEnd($event)"
+    (ionSlideDrag)="ionSlideTouchStart($event)"    >
+    <ion-slide *ngFor="let videoData of getPlaylist(); let i = index;">
+      <div class="item-slider-img">
+        <img
+          data-src="{{ videoData.image }}"
+          data-srcset="{{ videoData.image }}"
+          (load)="i === 0 ? handlerOnLoad($event) : null"
+          class="swiper-lazy"/>
+      </div>
+
+      <ion-buttons mode="md" *ngIf="managerVideo">
+        <ion-button (click)="managerVideo.handlerMuted($event)" size="small">
+          <ion-icon
+            slot="icon-only"
+            [name]="managerVideo._config.muted ? 'volume-off' : 'volume-medium'"
+          ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-slide>
+  </ion-slides>
+  
+  <div class="video-slide-principal">
+    <manager-video [options]="videoOptions"></manager-video>
+  </div>
+  
+</ion-content>

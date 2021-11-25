@@ -1,0 +1,16 @@
+:host {
+    .app-video-container {
+      width: 100vw;
+      position: relative;
+      background-color: black;
+      img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+      }
+    }
+}
